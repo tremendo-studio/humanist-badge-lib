@@ -19,8 +19,6 @@ function main() {
 
   const humanInput = script?.getAttribute("data-human-input")
 
-  document.querySelector("[data-humanist-badge]")?.remove()
-
   const styleTag = document.createElement("style")
   styleTag.setAttribute("data-humanist-styles", "")
 
