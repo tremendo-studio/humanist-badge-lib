@@ -24,6 +24,7 @@ function main() {
 
   styleTag.textContent = css`
     .humanist-root {
+      background-color: #ffffff;
       border: 1px solid rgb(0, 0, 0, 0.03);
       border-radius: 0.5em;
       color: ${color};
@@ -35,7 +36,7 @@ function main() {
       padding: 0.3em 0.6em;
       pointer-events: none;
 
-      position: absolute;
+      position: fixed;
       ${positionY};
       ${positionX};
 
