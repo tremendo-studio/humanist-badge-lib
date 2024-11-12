@@ -54,13 +54,15 @@ function main() {
       opacity: 0.3;
     }
   `
+
+  document.querySelector("[data-humanist-styles]")?.remove()
   document.head.appendChild(styleTag)
 
   const root = document.createElement("div")
-  root.innerHTML = html`<div class="humanist-root">
-    <span>Humanist</span><span class="human-input">${humanInput}</span>
-  </div>`
+  root.className = "humanist-root"
+  root.innerHTML = html`<span>Humanist</span><span class="human-input">${humanInput}</span>`
 
+  document.querySelector("[data-humanist-root]")?.remove()
   document.body.appendChild(root)
 }
 
