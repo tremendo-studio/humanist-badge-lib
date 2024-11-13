@@ -1,10 +1,8 @@
 const css = String.raw
 
 export function loadFonts() {
-  document.querySelector("[data-humanist-fonts]")?.remove()
-
-  const styleTag = document.createElement("style") as HTMLStyleElement
-  styleTag.setAttribute("data-humanist-fonts", "")
+  const styleTag = document.createElement("style")
+  styleTag.id = "humanist-lib-fonts"
 
   styleTag.textContent = css`
     @font-face {
@@ -31,5 +29,7 @@ export function loadFonts() {
       font-style: normal;
     }
   `
+
+  document.getElementById("humanist-lib-fonts")?.remove()
   document.head.appendChild(styleTag)
 }
