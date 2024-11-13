@@ -60,7 +60,9 @@ function main() {
   document.head.appendChild(styleTag)
 
   const root = document.createElement("div")
-  root.className = "humanist-root"
+  root.setAttribute("data-humanist-root", "")
+  root.setAttribute("class", "humanist-root")
+
   root.innerHTML = html`<span>Humanist</span><span class="human-input">${humanInput}</span>`
 
   document.querySelector("[data-humanist-root]")?.remove()
