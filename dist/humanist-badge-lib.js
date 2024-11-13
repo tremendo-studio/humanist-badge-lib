@@ -22,23 +22,23 @@
       font-weight: 400;
       font-style: normal;
     }
-  `,(t=document.getElementById("humanist-lib-fonts"))==null||t.remove(),document.head.appendChild(A)}const o=String.raw;function x(A){var i;const t=document.createElement("style");t.id="humanist-lib-styles";const f=A==null?void 0:A.getAttribute("data-color"),e=A==null?void 0:A.getAttribute("data-font"),g=A==null?void 0:A.getAttribute("data-size"),n=A==null?void 0:A.getAttribute("data-position"),s=(n==null?void 0:n.split("-")[0])==="top"?"top: 0":"bottom: 0",Y=(n==null?void 0:n.split("-")[1])==="left"?"left: 0":"right: 0",B=A==null?void 0:A.getAttribute("data-container-Id");t.textContent=o`
+  `,(t=document.getElementById("humanist-lib-fonts"))==null||t.remove(),document.head.appendChild(A)}const o=String.raw;function x(A){var i;const t=document.createElement("style");t.id="humanist-lib-styles";const B=A==null?void 0:A.getAttribute("data-color"),e=A==null?void 0:A.getAttribute("data-font"),g=A==null?void 0:A.getAttribute("data-size"),n=A==null?void 0:A.getAttribute("data-position"),s=(n==null?void 0:n.split("-")[0])==="top"?"top: 0":"bottom: 0",Y=(n==null?void 0:n.split("-")[1])==="left"?"left: 0":"right: 0",f=A==null?void 0:A.getAttribute("data-container-Id");t.textContent=o`
     .humanist-lib-root {
       background-color: #ffffff;
       border: 1px solid rgb(0, 0, 0, 0.03);
       border-radius: 0.5em;
-      color: ${f};
+      color: ${B};
       display: flex;
       font-family: ${e};
       font-size: ${g}px;
       line-height: 1;
-      margin: 0.3em 0.6em;
+      margin: ${f?"0 0":"0.3em 0.6em"};
       padding: 0.3em 0.6em;
       pointer-events: none;
 
-      position: ${B?"static":"fixed"};
-      ${B?"":s};
-      ${B?"":Y};
+      position: ${f?"static":"fixed"};
+      ${f?"":s};
+      ${f?"":Y};
 
       box-shadow:
         1px 1px 2px 0px #00000008,
@@ -54,4 +54,4 @@
     .humanist-lib-root .human-input {
       opacity: 0.3;
     }
-  `,(i=document.getElementById("humanist-lib-styles"))==null||i.remove(),document.head.appendChild(t)}const C=String.raw;function r(A){var n;const t=A==null?void 0:A.getAttribute("data-container-Id"),f=A==null?void 0:A.getAttribute("data-human-input"),e=document.createElement("div");e.id="humanist-lib-root",e.className="humanist-lib-root",e.innerHTML=C`<span>Humanist</span><span class="human-input">${f}</span>`;const g=t?document.getElementById(t):document.body;g&&((n=document.getElementById("humanist-lib-root"))==null||n.remove(),g.appendChild(e))}function a(){const A=document.getElementById("humanist-badge-lib");A&&(c(),x(A),r(A))}document.readyState==="complete"?a():document.addEventListener("load",a)})();
+  `,(i=document.getElementById("humanist-lib-styles"))==null||i.remove(),document.head.appendChild(t)}const C=String.raw;function r(A){var n;const t=A==null?void 0:A.getAttribute("data-container-Id"),B=A==null?void 0:A.getAttribute("data-human-input"),e=document.createElement("div");e.id="humanist-lib-root",e.className="humanist-lib-root",e.innerHTML=C`<span>Humanist</span><span class="human-input">${B}</span>`;const g=t?document.getElementById(t):document.body;g&&((n=document.getElementById("humanist-lib-root"))==null||n.remove(),g.appendChild(e))}function a(){const A=document.getElementById("humanist-badge-lib");A&&(c(),x(A),r(A))}document.readyState==="complete"?a():document.addEventListener("load",a)})();

@@ -24,7 +24,7 @@ export function loadStyles(script: HTMLElement) {
       font-family: ${fontFamily};
       font-size: ${fontSize}px;
       line-height: 1;
-      margin: 0.3em 0.6em;
+      margin: ${containerId ? "0 0" : "0.3em 0.6em"};
       padding: 0.3em 0.6em;
       pointer-events: none;
 
