@@ -1,6 +1,6 @@
 const css = String.raw
 
-export function style() {
+export function loadFonts() {
   document.querySelector("[data-humanist-fonts]")?.remove()
 
   const styleTag = document.createElement("style") as HTMLStyleElement

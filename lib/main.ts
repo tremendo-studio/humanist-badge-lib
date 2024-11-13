@@ -1,10 +1,10 @@
-import { style } from "./style"
+import { loadFonts } from "./load-fonts"
 
 const html = String.raw
 const css = String.raw
 
 function main() {
-  style()
+  loadFonts()
 
   const script = document.querySelector("[data-humanist-badge]")
   if (!script) return
@@ -18,6 +18,8 @@ function main() {
   const positionX = position?.split("-")[1] === "left" ? "left: 0" : "right: 0"
 
   const humanInput = script?.getAttribute("data-human-input")
+
+  const container = script?.getAttribute("data-container")
 
   const styleTag = document.createElement("style")
   styleTag.setAttribute("data-humanist-styles", "")
@@ -36,7 +38,7 @@ function main() {
       padding: 0.3em 0.6em;
       pointer-events: none;
 
-      position: fixed;
+      position: ${container ? "static" : "fixed"};
       ${positionY};
       ${positionX};
 
@@ -69,4 +71,8 @@ function main() {
   document.body.appendChild(root)
 }
 
-main()
+if (document.readyState === "complete") {
+  main()
+} else {
+  document.addEventListener("load", main)
+}
